@@ -15,23 +15,23 @@
 // ======================================================================
 
 class Storage {
-  #item;
+  #items;
 
-  constructor(item) {
-    this.#item = item;
+  constructor(items) {
+    this.#items = items;
   }
   getItems() {
-    return this.#item;
+    return this.#items;
   }
 
   addItem(newItem) {
-    this.#item.push(newItem);
+    this.#items.push(newItem);
   }
 
   removeItem(itemToRemove) {
-    const deletItem = this.#item.indexOf(itemToRemove);
-    if (deletItem > 0) {
-      this.#item.splice(deletItem, 1);
+    const deletItem = this.#items.indexOf(itemToRemove);
+    if (deletItem !== -1) {
+      this.#items.splice(deletItem, 1);
     }
   }
 }
